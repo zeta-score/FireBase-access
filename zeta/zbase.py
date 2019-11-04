@@ -28,6 +28,7 @@ def create(node):
     node = node.jsonify()
     id = node['id']
     NODES.child(id).set(node)
+    logging.debug("{id} is Created".format(id=id))
     return exists(id)
 
 def read(id):
@@ -40,7 +41,7 @@ def read(id):
     """
     node = NODES.child(id).get()
     if node is None:
-        logging.critical("{id} is not Found".format(id=id))
+        logging.critical("{id} cannot be read".format(id=id))
     else:
         node = Node.from_dict(node)
         logging.debug("{id} is Found".format(id=id))
@@ -72,7 +73,7 @@ def delete(id):
         Boolean on the status of the deletion at FireBase
     """
     if exists(id):
-        NODE.child(id).delete()
+        NODES.child(id).delete()
         logging.debug("{id} is deleted".format(id=id))
         return True
     return False

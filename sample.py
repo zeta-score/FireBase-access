@@ -7,7 +7,8 @@ if __name__ == "__main__":
         create(node)
         id = node.id
         node = read(id)
+        assert node != None
         node.set_balance(999)
         node.set_zscore(0.6)
         update(node)
-        print(node)
+        delete(id)
