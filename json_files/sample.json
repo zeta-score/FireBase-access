@@ -1,0 +1,17 @@
+{
+	"id": "X02353",
+	"zeta_score": 0.5,
+	"balance": 1000,
+	"tx": {
+		"send": {
+			"x1234": {
+				"id": "hi",
+				"timestamp": "1234567898765",
+				"source": "sfsgdhj",
+				"target": "123",
+				"value": 314
+			}
+		},
+		"recieve": {}
+	}
+}
